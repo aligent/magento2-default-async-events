@@ -5,7 +5,7 @@
     "require": {
         "php": ">=7.4",
         "magento/framework": "*",
-        "aligent/magento-async-events": "^2.3"
+        "aligent/async-events": "^2.3"
     },
     "license": [
         "GPL-3.0-only"
