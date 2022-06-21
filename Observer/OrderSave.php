@@ -5,13 +5,12 @@
  */
 
 declare(strict_types=1);
-namespace Aligent\DefaultAsyncEvents;
+
+namespace Aligent\DefaultAsyncEvents\Observer;
 
 use Aligent\DefaultAsyncEvents\Model\Service\OrderPublishService;
 use Magento\Framework\Event\Observer;
 use Magento\Framework\Event\ObserverInterface;
-use Magento\Framework\MessageQueue\PublisherInterface;
-use Magento\Framework\Serialize\SerializerInterface;
 use Magento\Sales\Api\Data\OrderInterface;
 
 class OrderSave implements ObserverInterface

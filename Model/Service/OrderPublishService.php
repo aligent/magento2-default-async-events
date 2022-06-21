@@ -5,6 +5,7 @@
  */
 
 declare(strict_types=1);
+
 namespace Aligent\DefaultAsyncEvents\Model\Service;
 
 use Aligent\AsyncEvents\Helper\QueueMetadataInterface;

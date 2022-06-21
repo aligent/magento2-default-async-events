@@ -5,7 +5,7 @@
  */
 
 declare(strict_types=1);
-namespace Aligent\DefaultAsyncEvents;
+namespace Aligent\DefaultAsyncEvents\Observer;
 
 use Aligent\DefaultAsyncEvents\Model\Service\ShipmentPublishService;
 use Magento\Framework\Event\Observer;
