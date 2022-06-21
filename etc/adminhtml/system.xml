@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<!--
+  ~ @author Aligent Consulting Team
+  ~ @copyright Copyright (c) 2022 Aligent Consulting. (http://www.aligent.com.au)
+  -->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="aligent_async_events" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Async Events</label>
+            <tab>service</tab>
+            <resource>Magento_Webapi::config_webapi</resource>
+
+            <group id="publication" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Event Publication</label>
+                <field id="order_enabled" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Order Publication Enabled?</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="order_statuses" translate="label" sortOrder="15" type="multiselect" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Order Statuses to be Published</label>
+                    <source_model>Magento\Sales\Model\Config\Source\Order\Status</source_model>
+                    <can_be_empty>1</can_be_empty>
+                    <depends>
+                        <field id="order_enabled">1</field>
+                    </depends>
+                </field>
+                <field id="shipment_enabled" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Shipment Publication Enabled?</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="customer_enabled" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Customer Publication Enabled?</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
