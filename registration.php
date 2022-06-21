@@ -10,6 +10,6 @@ use Magento\Framework\Component\ComponentRegistrar;
 
 ComponentRegistrar::register(
     ComponentRegistrar::MODULE,
-    'Aligent_DataProxy',
+    'Aligent_DefaultAsyncEvents',
     __DIR__
 );
