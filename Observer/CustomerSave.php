@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Aligent\DefaultAsyncEvents\Observer;
 
 use Aligent\DefaultAsyncEvents\Model\Service\CustomerPublishService;
-use Magento\Customer\Api\Data\CustomerInterface;
+use Magento\Customer\Model\Customer;
 use Magento\Framework\Event\Observer;
 use Magento\Framework\Event\ObserverInterface;
 
@@ -33,7 +33,7 @@ class CustomerSave implements ObserverInterface
      */
     public function execute(Observer $observer)
     {
-        /** @var CustomerInterface $customer */
+        /** @var Customer $customer */
         $customer = $observer->getEvent()->getData('customer');
         $this->customerPublishService->execute($customer, 'customer.saved');
     }

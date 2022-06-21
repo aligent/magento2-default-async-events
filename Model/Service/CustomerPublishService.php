@@ -10,7 +10,7 @@ namespace Aligent\DefaultAsyncEvents\Model\Service;
 
 use Aligent\AsyncEvents\Helper\QueueMetadataInterface;
 use Aligent\DefaultAsyncEvents\Helper\Config;
-use Magento\Customer\Api\Data\CustomerInterface;
+use Magento\Customer\Model\Customer;
 use Magento\Framework\MessageQueue\PublisherInterface;
 use Magento\Framework\Serialize\SerializerInterface;
 
@@ -42,11 +42,11 @@ class CustomerPublishService
     /**
      * Publishes a shipment event if enabled
      *
-     * @param CustomerInterface $customer
+     * @param Customer $customer
      * @param string $eventName
      * @return void
      */
-    public function execute(CustomerInterface $customer, string $eventName): void
+    public function execute(Customer $customer, string $eventName): void
     {
         if ($this->configHelper->canPublishCustomer($customer)) {
             $this->publisher->publish(

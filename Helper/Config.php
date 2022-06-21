@@ -7,7 +7,7 @@
 declare(strict_types=1);
 namespace Aligent\DefaultAsyncEvents\Helper;
 
-use Magento\Customer\Api\Data\CustomerInterface;
+use Magento\Customer\Model\Customer;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Newsletter\Model\Subscriber;
 use Magento\Sales\Api\Data\OrderInterface;
@@ -96,10 +96,10 @@ class Config
     /**
      * Returns whether a given customer can be published based on configuration
      *
-     * @param CustomerInterface $customer
+     * @param Customer $customer
      * @return bool
      */
-    public function canPublishCustomer(CustomerInterface $customer): bool
+    public function canPublishCustomer(Customer $customer): bool
     {
         $storeId = (int)$customer->getStoreId();
         return $this->scopeConfig->isSetFlag(
