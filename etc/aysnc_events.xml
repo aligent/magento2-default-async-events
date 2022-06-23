@@ -12,6 +12,6 @@
         <service class="Magento\Sales\Api\ShipmentRepositoryInterface" method="get"/>
     </async_event>
     <async_event name="customer.saved">
-        <service class="Magento\Customer\Api\CustomerRepositoryInterface" method="get"/>
+        <service class="Aligent\DefaultAsyncEvents\Api\LoadCustomerByIdInterface" method="loadCustomerFromDb"/>
     </async_event>
 </config>

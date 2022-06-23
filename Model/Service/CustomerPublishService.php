@@ -53,7 +53,7 @@ class CustomerPublishService
                 QueueMetadataInterface::EVENT_QUEUE,
                 [
                     $eventName,
-                    $this->serializer->serialize(['id' => $customer->getId()])
+                    $this->serializer->serialize(['customerId' => $customer->getId()])
                 ]
             );
         }
