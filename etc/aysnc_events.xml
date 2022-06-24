@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+  ~ @author Aligent Consulting Team
+  ~ @copyright Copyright (c) 2022 Aligent Consulting. (http://www.aligent.com.au)
+  -->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Aligent_AsyncEvents:etc/async_events.xsd">
+    <async_event name="sales.order.saved">
+        <service class="Magento\Sales\Api\OrderRepositoryInterface" method="get"/>
+    </async_event>
+    <async_event name="sales.shipment.saved">
+        <service class="Magento\Sales\Api\ShipmentRepositoryInterface" method="get"/>
+    </async_event>
+    <async_event name="customer.saved">
+        <service class="Aligent\DefaultAsyncEvents\Api\LoadCustomerByIdInterface" method="loadCustomerFromDb"/>
+    </async_event>
+</config>

@@ -1,0 +1,21 @@
+{
+    "name": "aligent/magento2-default-async-events",
+    "type": "magento2-module",
+    "description": "A set of default events for use with the aligent/magento-async-events module",
+    "require": {
+        "php": ">=7.4",
+        "magento/framework": "*",
+        "aligent/async-events": "^2.3"
+    },
+    "license": [
+        "GPL-3.0-only"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Aligent\\DefaultAsyncEvents\\": ""
+        }
+    }
+}
