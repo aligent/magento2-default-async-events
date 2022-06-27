@@ -7,11 +7,20 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Aligent_AsyncEvents:etc/async_events.xsd">
     <async_event name="sales.order.saved">
         <service class="Magento\Sales\Api\OrderRepositoryInterface" method="get"/>
+        <resources>
+            <resource>Magento_Sales::actions_view</resource>
+        </resources>
     </async_event>
     <async_event name="sales.shipment.saved">
         <service class="Magento\Sales\Api\ShipmentRepositoryInterface" method="get"/>
+        <resources>
+            <resource>Magento_Sales::shipment</resource>
+        </resources>
     </async_event>
     <async_event name="customer.saved">
         <service class="Aligent\DefaultAsyncEvents\Api\LoadCustomerByIdInterface" method="loadCustomerFromDb"/>
+        <resources>
+            <resource>Magento_Customer::customer</resource>
+        </resources>
     </async_event>
 </config>
